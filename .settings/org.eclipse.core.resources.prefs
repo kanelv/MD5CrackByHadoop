@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/MD5Hash.java=UTF-8
+encoding//src/hadoop/CandidateRangeRecordReader.java=UTF-8
+encoding//src/hadoop/MD5Hash.java=UTF-8
+encoding//src/hadoop/PasswordCrackerReducer.java=UTF-8
+encoding//src/hadoop/PasswordCrackerUtil.java=UTF-8

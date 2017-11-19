@@ -1,7 +1,10 @@
+package hadoop;
+
 /**
  * @author Cahgnexx
  * @email cuonglvrepvn@gmail.com
  */
+// Lớp triển khai hash MD5
 public class MD5Hash
 {
 	// Khởi tạo 4 từ 32 bit A, B, C, D với những hằng số cố định
@@ -22,7 +25,7 @@ public class MD5Hash
             TABLE_T[i] = (int) (long) ((1L << 32) * Math.abs(Math.sin(i + 1)));
     }
  
-    public static byte[] computeMD5(byte[] message)
+    public static byte[] hashMD5(byte[] message)
     {
     	// Tiền xử lý
         int messageLenBytes = message.length;
@@ -128,15 +131,16 @@ public class MD5Hash
         }
         return sb.toString();
     }
- 
+ /*
     public static void main(String[] args)
     {
     	long startTime = System.currentTimeMillis();
     	    	
-    	System.out.println(toHexString(computeMD5("123456".getBytes())));
+    	System.out.println(toHexString(hashMD5("123456".getBytes())));
     	
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println(totalTime);               
     }
+    */
 }
