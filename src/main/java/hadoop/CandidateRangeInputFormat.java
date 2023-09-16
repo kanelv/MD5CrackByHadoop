@@ -1,18 +1,14 @@
 package hadoop;
 
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.InputFormat;
-import org.apache.hadoop.mapreduce.InputSplit;
-import org.apache.hadoop.mapreduce.JobContext;
-import org.apache.hadoop.mapreduce.RecordReader;
-import org.apache.hadoop.mapreduce.TaskAttemptContext;
-
 /**
- * @author Cahgnexx
+ * @author CuongLe
  *
  */
 public class CandidateRangeInputFormat extends InputFormat<Text, Text> {
@@ -31,7 +27,7 @@ public class CandidateRangeInputFormat extends InputFormat<Text, Text> {
 
         int numberOfSplit = job.getConfiguration().getInt("numberOfSplit", 1);    //lay so khoang chia
         long subRangeSize = (PasswordCrackerUtil.TOTAL_PASSWORD_RANGE_SIZE + numberOfSplit - 1) / numberOfSplit;
- 
+
         // Moi khoang con luu tru trong danh sach InputSlip
         for (int i = 0; i < numberOfSplit; i++) {
             long currentSubRange = i*subRangeSize;
